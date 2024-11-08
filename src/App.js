@@ -17,7 +17,7 @@ function App() {
 
     try {
       // Make a POST request to the backend with the prompt
-      const response = await fetch("https://your-backend-url.com/", {
+      const response = await fetch("https://image-api.nala-neyugn.workers.dev", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

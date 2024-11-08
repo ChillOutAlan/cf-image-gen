@@ -1,0 +1,6 @@
+name = "imagegen-frontend"
+
+compatibility_date = "2024-11-07"
+compatibility_flags = ["nodejs_compat"]
+
+main = "src/App.js"
