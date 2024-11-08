@@ -15,3 +15,24 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+export default {
+  async fetch(request, env) {
+    const { prompt } = await request.json();
+
+    const inputs = {
+      prompt: prompt || "war dog",  // Default prompt if none is provided
+    };
+
+    const response = await env.AI.run(
+      "@cf/stability/ai/stable-diffusion-xl-base-1.0",
+      inputs,
+    );
+
+    return new Response(response, {
+      headers: {
+        "content-type": "image/png",
+      },
+    });
+  },
+};
